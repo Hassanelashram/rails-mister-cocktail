@@ -1,0 +1,28 @@
+<div class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-4 mx-auto">
+        <h2 class="title"><%= @cocktail.name %></h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-6">
+      <h2>Description:</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque deleniti, consectetur soluta dolorem dolor pariatur? Dolore molestias, vel quod.</p>
+    </div>
+    <div class="col">
+      <h2>Ingredients</h2>
+      <% @cocktail.doses.each do |d| %>
+        <p><strong><%= d.ingredient.name %></strong> -
+            <%= d.description %>
+            <%= link_to 'Delete', d, method: :delete %>
+        </p>
+      <% end %>
+      <%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail), class: 'btn btn-success'  %>
+    </div>
+  </div>
+</div>

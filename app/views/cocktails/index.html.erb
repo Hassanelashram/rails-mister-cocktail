@@ -1,0 +1,16 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2><img width="150px" src="https://image.flaticon.com/icons/svg/3059/3059084.svg" alt=""></h2>
+    </div>
+    <% @cocktails.each do |c| %>
+    <div class="col-4 mx-auto">
+        <%= link_to c do %>
+          <div class="card">
+            <h2 class="card-title"><strong><%= c.name %></strong> </h2>
+          </div>
+        <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
