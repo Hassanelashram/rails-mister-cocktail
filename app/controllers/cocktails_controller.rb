@@ -5,7 +5,7 @@ class CocktailsController < ApplicationController
   end
 
   def show
-
+    @link = theLink(@cocktail)
   end
 
   def new
@@ -30,6 +30,6 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end

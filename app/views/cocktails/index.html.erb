@@ -7,7 +7,15 @@
     <div class="col-sm-12 col-lg-4 mx-auto">
         <%= link_to c do %>
           <div class="card">
-            <h2 class="card-title"><strong><%= c.name %></strong> </h2>
+            <div class="card-img-top">
+              <% if c.photo.attached? %>
+              <%= cl_image_tag "https://res.cloudinary.com/dlseg9qtn/image/upload/v1591956648/#{c.photo.key}.png", class: 'img' %>
+              <% end %>
+            </div>
+            <div class="card-footer">
+              <h2><strong><%= c.name %></strong></h2>
+              <p><%= c.ingredients.count %> Ingredients </p>
+            </div>
           </div>
         <% end %>
     </div>

@@ -1,11 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-6 mx-auto">
-      <%= simple_form_for([@cocktail, @dose]) do |f| %>
-        <%= f.input :description %>
-        <%= f.association :ingredient %>
-        <%= f.submit %>
+      <div class="form">
+        <%= simple_form_for([@cocktail, @dose]) do |f| %>
+        <%= f.input :description, placeholder: '6ounces' %>
+        <%= f.association :ingredient, { prompt: "Pick an ingredient:"} %>
+        <%= f.submit 'Add to Cocktail', class: 'btn btn-success w-100' %>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
