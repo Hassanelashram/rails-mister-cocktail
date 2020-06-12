@@ -9,7 +9,7 @@
           <div class="card">
             <div class="card-img-top">
               <% if c.photo.attached? %>
-              <%= cl_image_tag "https://res.cloudinary.com/dlseg9qtn/image/upload/v1591956648/#{c.photo.key}.png", class: 'img' %>
+              <%= cl_image_tag c.photo.key, class: 'img' %>
               <% end %>
             </div>
             <div class="card-footer">

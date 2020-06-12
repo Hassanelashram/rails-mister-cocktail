@@ -5,7 +5,6 @@ class CocktailsController < ApplicationController
   end
 
   def show
-    @link = theLink(@cocktail)
   end
 
   def new

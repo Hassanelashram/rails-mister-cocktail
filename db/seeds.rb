@@ -11,3 +11,9 @@ parse['drinks'].length.times do
   counter += 1
   @ingredient.save
 end
+
+require "open-uri"
+
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+article = Cocktail.new(name: 'NES')
+article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
