@@ -3,7 +3,7 @@
     <div class="col-8 mx-auto">
       <div class="form text-center">
         <%= simple_form_for @cocktail do |f| %>
-        <%= f.input :name, placeholder: 'Sex on the beach' %>
+        <%= f.input :name, placeholder: 'Sex on the beach', id: 'cocktailName' %>
         <%= f.input :photo, as: :file %>
         <%= f.submit 'Add Cocktail', class: 'btn btn-success w-100' %>
       <% end %>

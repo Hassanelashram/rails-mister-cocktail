@@ -13,10 +13,16 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
+
     if @cocktail.save
       redirect_to @cocktail
     else
       render :new
+    end
+    if @cocktail.name == 'Hassan'
+      @cocktail.destroy
+    elsif @cocktail.name == 'hassan'
+      @cocktail.destroy
     end
   end
 
